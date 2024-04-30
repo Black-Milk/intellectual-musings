@@ -1,14 +1,24 @@
-An attempt to set up hyperparameter optimization with Hydra and Optuna in Python. This code is a simple test of
-integration with Optuna and Hydra, not an attempt to correctly classify cancer outcomes; other metrics should be used.
-For example, consideration should be made for the following.
+# Hydra and Optuna Hyperparameter Optimization
 
-- **Sensitivity (True Positive Rate)**: This measures the proportion of actual positives that are correctly identified as
-such (e.g., the percentage of sick people who are correctly identified as having the condition).
-- **Specificity (True Negative Rate)**: This measures the proportion of actual negatives that are correctly identified (e.g.,
-the percentage of healthy people who are correctly identified as not having the condition).
-For cancer detection, a high sensitivity is crucial because failing to detect a cancer case can be life-threatening.
-Specificity is also important to minimize the number of false positives, which can cause unnecessary anxiety and
-additional medical procedures.
+## Overview
+
+This code is a simple integration test of Hydra with Optuna. Optuna is a hyperparameter optimization framework in
+Python. Hydra is a
+framework for configuring complex applications. This not a serious attempt to correctly classify cancer outcomes;
+consideration should be made for the following:
+
+- **Sensitivity (True Positive Rate)**: This measures the proportion of actual positives that are correctly identified
+  as
+  such (e.g., the percentage of sick people who are correctly identified as having the condition).
+- **Specificity (True Negative Rate)**: This measures the proportion of actual negatives that are correctly identified (
+  e.g.,
+  the percentage of healthy people who are correctly identified as not having the condition).
+  For cancer detection, a high sensitivity is crucial because failing to detect a cancer case can be life-threatening.
+  Specificity is also important to minimize the number of false positives, which can cause unnecessary anxiety and
+  additional medical procedures.
+- **Calibration of Model Predictions** - Most classification models in Scikit-learn do not produce actual probabilities
+  for their predictions; calibration is necessary for relying on model predictions for decision-making, especially in
+  high-risk scenarios.
 
 ## Running the code
 
