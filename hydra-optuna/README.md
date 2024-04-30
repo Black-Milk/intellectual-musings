@@ -4,7 +4,7 @@
 
 This code is a simple integration test of Hydra with Optuna. Optuna is a hyperparameter optimization framework in
 Python. Hydra is a
-framework for configuring complex applications. This not a serious attempt to correctly classify cancer outcomes;
+framework for configuring complex applications. **CAUTION: This not a serious attempt to correctly classify cancer outcomes**;
 consideration should be made for the following:
 
 - **Sensitivity (True Positive Rate)**: This measures the proportion of actual positives that are correctly identified
