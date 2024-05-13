@@ -2,27 +2,15 @@
 
 ## Overview
 
-This code is a simple integration test of Hydra with Optuna. Optuna is a hyperparameter optimization framework in
-Python. Hydra is a
-framework for configuring complex applications. **CAUTION: This not a serious attempt to correctly classify cancer outcomes**;
-consideration should be made for the following:
+This document describes a rudimentary integration test of Hydra with Optuna. Optuna is a framework designed for hyperparameter optimization in Python, while Hydra facilitates the configuration of complex applications. **CAUTION: This is not a comprehensive endeavor to accurately classify cancer outcomes.** Consideration should be given to the following key metrics:
 
-- **Sensitivity (True Positive Rate)**: This measures the proportion of actual positives that are correctly identified
-  as
-  such (e.g., the percentage of sick people who are correctly identified as having the condition).
-- **Specificity (True Negative Rate)**: This measures the proportion of actual negatives that are correctly identified (
-  e.g.,
-  the percentage of healthy people who are correctly identified as not having the condition).
-  For cancer detection, a high sensitivity is crucial because failing to detect a cancer case can be life-threatening.
-  Specificity is also important to minimize the number of false positives, which can cause unnecessary anxiety and
-  additional medical procedures.
-- **Calibration of Model Predictions** - Most classification models in Scikit-learn do not produce actual probabilities
-  for their predictions; calibration is necessary for relying on model predictions for decision-making, especially in
-  high-risk scenarios.
+- **Sensitivity (True Positive Rate)**: This metric quantifies the proportion of actual positives accurately identified (e.g., the percentage of individuals who are correctly diagnosed with the condition).
+- **Specificity (True Negative Rate)**: This metric quantifies the proportion of actual negatives accurately identified (e.g., the percentage of healthy individuals correctly recognized as not having the condition). For cancer detection, high sensitivity is critical, as a missed diagnosis can be life-threatening. Similarly, high specificity is essential to minimize the incidence of false positives, which can lead to undue anxiety and unnecessary medical interventions.
+- **Calibration of Model Predictions**: Most classification models, such as those in Scikit-learn, do not inherently produce calibrated probabilities for their predictions. Calibration is vital for relying on model predictions in decision-making, particularly in high-risk scenarios.
 
-## Running the code
+## Running the Code
 
-Ensure that you're in the directory where tune.py resides from the cli; then, run the following command:
+To execute the code, ensure you are in the directory containing `tune.py`. From the command line interface (CLI), execute the following command:
 
 ```bash
 python tune.py --multirun
@@ -30,12 +18,12 @@ python tune.py --multirun
 
 ### Troubleshooting
 
-1. Sql Alchemy 2.0 incompatibilty - make sure to use a version that is lesser than 2.0, and you should be okay to use
-   SQL lite for storage of trial data with Optuna.
+1. **SQLAlchemy 2.0 Incompatibility**: Ensure that you are using a version of SQLAlchemy that is earlier than 2.0. This version is compatible with using SQLite for storing trial data in Optuna.
 
 ## Resources
 
 1. [Optuna Sweeper Plugin for Hydra](https://hydra.cc/docs/plugins/optuna_sweeper/)
 2. [Hydra Override Syntax](https://hydra.cc/docs/advanced/override_grammar/extended/)
-3. [Optuna Trial Docs](https://optuna.readthedocs.io/en/stable/reference/generated/optuna.trial.Trial.html)
-4. [SQL Alchemy Issue](https://github.com/optuna/optuna/issues/4392)
+3. [Optuna Trial Documentation](https://optuna.readthedocs.io/en/stable/reference/generated/optuna.trial.Trial.html)
+4. [SQLAlchemy Issue on GitHub](https://github.com/optuna/optuna/issues/4392)
+5. [Inspiration for This Integration](https://github.com/Valentyn1997/RICB)
