@@ -2,3 +2,4 @@ optuna~=2.10.1
 omegaconf~=2.3.0
 scikit-learn~=1.4.2
 mesa~=2.3.0
+numpy~=1.26.4
